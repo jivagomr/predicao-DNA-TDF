@@ -1,0 +1,72 @@
+LOCUS       AF135270                1284 bp    mRNA    linear   INV 23-SEP-1999
+DEFINITION  Physarum polycephalum fragmin A mRNA, complete cds.
+ACCESSION   AF135270
+VERSION     AF135270.1  GI:4574741
+KEYWORDS    .
+SOURCE      Physarum polycephalum
+  ORGANISM  Physarum polycephalum
+            Eukaryota; Amoebozoa; Mycetozoa; Myxogastria; Myxogastromycetidae;
+            Physariida; Physarum.
+REFERENCE   1  (bases 1 to 1284)
+  AUTHORS   T'jampens,D., Bailey,J., Cook,L.J., Constantin,B.,
+            Vandekerckhove,J. and Gettemans,J.
+  TITLE     Physarum amoebae express a distinct fragmin-like actin-binding
+            protein that controls in vitro phosphorylation of actin by the
+            actin-fragmin kinase
+  JOURNAL   Eur. J. Biochem. 265 (1), 240-250 (1999)
+   PUBMED   10491179
+REFERENCE   2  (bases 1 to 1284)
+  AUTHORS   T'Jampens,D., Bailey,J., Cook,L.J., Constantin,B.,
+            Vandekerckhove,J. and Gettemans,J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-MAR-1999) Medical Protein Research (VIB),
+            Universiteit Gent, Ledeganckstraat 35, Gent B-9000, Belgium
+FEATURES             Location/Qualifiers
+     source          1..1284
+                     /organism="Physarum polycephalum"
+                     /mol_type="mRNA"
+                     /strain="LU 353"
+                     /db_xref="taxon:5791"
+     CDS             80..1186
+                     /function="actin filament severing and capping protein;
+                     controls actin phosphorylation"
+                     /note="calcium-dependent gelsolin-like actin-binding
+                     protein; member of the FLAP family (fragmin-like proteins
+                     that enhance actin phosphorylation); members of this
+                     family include fragmin P and fragmin60"
+                     /codon_start=1
+                     /product="fragmin A"
+                     /protein_id="AAD24195.1"
+                     /db_xref="GI:4574742"
+                     /translation="MQKAKVYNIADSNIANLGTELEKKVKLAAAETEQAWKGVGKQVG
+                     LDIWRINQFKVTQVPKNAYGQFYSGDSYIVLWTYKQNDRLAWDVHFWLGTYTTQDEAG
+                     TAAYKTVELDDVLGGAPVQHREVQGYESQRFLSYFPNGIRILEGGFDTGFHHVKPEEY
+                     RPRLLHLKGKKFIRVSEVPLSHKSLNSGDVFIVDLGAELIQFNGSKSGVAERAKAAAL
+                     VQAIEGERNGKSKGRVVEESEDDAAFWKALGGKGAIASAEAGGSDVEADSIANVEKTL
+                     HRLSDATGNMKLAEVAKGKKIKKSLLDSTDVFIIDAGQEVIAWVGAKASVGERKYALR
+                     YAQEFVTQHNKNPATPVSRVLEGGENEVWNSLFE"
+ORIGIN      
+        1 actttgacca ctcactttca caccccggcc agcacatacc ggagtaaatt aaatcatagt
+       61 atacttgtag tactcgaaaa tgcagaaggc aaaagtgtac aacattgcgg actccaacat
+      121 cgccaacctg ggcactgagc tcgagaagaa ggtgaagttg gctgctgctg aaacagagca
+      181 ggcatggaag ggtgtgggca agcaagtggg cctcgacatc tggagaatca accaattcaa
+      241 agtcactcaa gtccccaaaa atgcttacgg ccaattctat tctggtgatt cctacattgt
+      301 cttgtggact tacaaacaaa atgatagact cgcttgggat gttcacttct ggttgggaac
+      361 ctacaccact caagatgaag caggaactgc agcatacaag accgttgaat tggacgacgt
+      421 ccttggagga gcacccgtgc agcacagaga ggtgcaggga tacgagtccc agcgcttctt
+      481 gagctatttc cccaatggca ttcgcattct ggagggtggt ttcgatactg gcttccacca
+      541 cgtcaaacct gaggaataca ggcccagact gctccacctg aagggaaaga agttcattcg
+      601 tgtgtccgag gtgcccctct cgcacaagag cctgaactcc ggcgatgtgt tcatcgtgga
+      661 cttgggagct gagctaatcc agttcaacgg gtctaagagt ggcgttgccg agcgcgctaa
+      721 ggccgctgcc ttggtccaag ctatcgaagg agagcgcaat ggaaaatcca agggacgcgt
+      781 cgtcgaagag agtgaagacg atgcagcctt ttggaaggcc ctcggaggaa agggcgccat
+      841 cgcctcagct gaggccggag gatccgatgt ggaggctgat tccatcgcca atgtcgagaa
+      901 gaccctccac cgccttagcg atgctactgg caacatgaag cttgcagagg tcgccaaggg
+      961 caagaagatc aagaaatcgt tgttggattc cactgatgtc ttcatcatcg atgctggtca
+     1021 agaggtcatc gcatgggtag gagccaaggc aagcgttgga gaaaggaaat atgctctcag
+     1081 atacgcacag gagttcgtga cccaacacaa caagaacccc gctacccccg tctcccgtgt
+     1141 gttggaggga ggagagaacg aggtgtggaa ctctcttttc gagtaaggcg tttatcttta
+     1201 tgtatctctt gcatgtactg aaaaacaacg cgtgtacatt ttatataaat agttaacttt
+     1261 tgttatgtaa aaaaaaaaaa aaaa
+//
+
