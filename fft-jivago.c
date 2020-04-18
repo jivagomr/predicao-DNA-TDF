@@ -78,8 +78,6 @@ int expected_origin(int cur) {
 }
 
 void ler_sequencia(char *seq) {
-
-	//printf("Arquivo de abrir: %s",seq);
 	
 	//a 97
 	//c 99
@@ -191,90 +189,76 @@ void executar(char *out_file) {
 		x++;
 	}
 
-	/*printf("\n");	
-	for (i=0;i<tamanho;i++) {
-		printf ("%d ",Ua[i]);
-	}
-	printf("\n");
-	for (i=0;i<tamanho;i++) {
-		printf ("%d ",Uc[i]);
-	}
-	printf("\n");
-	for (i=0;i<tamanho;i++) {
-		printf ("%d ",Ug[i]);
-	}
-	printf("\n");
-	for (i=0;i<tamanho;i++) {
-		printf ("%d ",Ut[i]);
-	}*/
-
 	//AGORA EU FAÇO A TRANSFORMADA DOS 	
-         fftw_complex *in, *out,*fftUa,*fftUc,*fftUg,*fftUt,*fftSequence;
-         fftw_plan p;
+	fftw_complex *in, *out,*fftUa,*fftUc,*fftUg,*fftUt,*fftSequence;
+	fftw_plan p;
 
-         fftUa = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
-         fftUc = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
-         fftUg = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
-         fftUt = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	fftUa = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	fftUc = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	fftUg = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	fftUt = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
 
-	 fftSequence = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	fftSequence = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
 
-         in = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
-         out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
-         p = fftw_plan_dft_1d(tamanho, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+	in = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * tamanho);
+	p = fftw_plan_dft_1d(tamanho, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
 
-	  //FFT Ua
-	   // passado para in o valor do vetor Ua
-	   for (i = 0; i < tamanho; i++) {
+	//FFT Ua
+	// passado para in o valor do vetor Ua
+	for (i = 0; i < tamanho; i++) {
 		in[i][0] = Ua[i];
 		in[i][1] = 0;
-	   }
-           fftw_execute(p); /* executando FFT para Ua */
-	   //devolvendo pra fftUa o valor de out
-	   for (i = 0; i < tamanho; i++) {
-		//printf("%f %f \n",out[i][0],out[i][1]);
+	}
+	fftw_execute(p); /* executando FFT para Ua */
+	
+	//devolvendo pra fftUa o valor de out
+	for (i = 0; i < tamanho; i++) {
 		fftUa[i][0] = out[i][0];
 		fftUa[i][1] = out[i][1];
-	   }
+	}
 
-	  //FFT Uc
-	   // passado para in o valor do vetor Ua
-	   for (i = 0; i < tamanho; i++) {
+	//FFT Uc
+	// passado para in o valor do vetor Ua
+	for (i = 0; i < tamanho; i++) {
 		in[i][0] = Uc[i];
 		in[i][1] = 0;
-	   }
-           fftw_execute(p); /* executando FFT para Ua */
-	   //devolvendo pra fftUa o valor de out
-	   for (i = 0; i < tamanho; i++) {
+	}
+    fftw_execute(p); /* executando FFT para Ua */
+	   
+	//devolvendo pra fftUa o valor de out
+	for (i = 0; i < tamanho; i++) {
 		fftUc[i][0] = out[i][0];
 		fftUc[i][1] = out[i][1];
-	   }
+	}
 
-	  //FFT Ug
-	   // passado para in o valor do vetor Ua
-	   for (i = 0; i < tamanho; i++) {
+	//FFT Ug
+	// passado para in o valor do vetor Ua
+	for (i = 0; i < tamanho; i++) {
 		in[i][0] = Ug[i];
 		in[i][1] = 0;
-	   }
-           fftw_execute(p); /* executando FFT para Ua */
-	   //devolvendo pra fftUa o valor de out
-	   for (i = 0; i < tamanho; i++) {
+	}
+    fftw_execute(p); /* executando FFT para Ua */
+	
+	//devolvendo pra fftUa o valor de out
+	for (i = 0; i < tamanho; i++) {
 		fftUg[i][0] = out[i][0];
 		fftUg[i][1] = out[i][1];
-	   }
+	}
 
-	  //FFT Ut
-	   // passado para in o valor do vetor Ua
-	   for (i = 0; i < tamanho; i++) {
+	//FFT Ut
+	// passado para in o valor do vetor Ua
+	for (i = 0; i < tamanho; i++) {
 		in[i][0] = Ut[i];
 		in[i][1] = 0;
-	   }
-           fftw_execute(p); /* executando FFT para Ua */
-	   //devolvendo pra fftUa o valor de out
-	   for (i = 0; i < tamanho; i++) {
+	}
+	fftw_execute(p); /* executando FFT para Ua */
+	
+	//devolvendo pra fftUa o valor de out
+	for (i = 0; i < tamanho; i++) {
 		fftUt[i][0] = out[i][0];
 		fftUt[i][1] = out[i][1];
-	   }
+	}
 
 	int int_part;
 
@@ -285,8 +269,7 @@ void executar(char *out_file) {
 
 	n=ceil(tamanho/2);
 
-	//printf("\n>> FFT FINAL <<\n");
-	   for (i = 1; i < n; i++) {
+	for (i = 1; i < n; i++) {
 
 		//parte real
 		kA=calcKvalue(fftUa[i][0]);
@@ -302,62 +285,29 @@ void executar(char *out_file) {
 		kT=calcKvalue(fftUt[i][1]);
 		fftSequence[i][1]=kA+kC+kG+kT;
 
-	   }
-	//printf("\n");
+	}
 
 	//ESCREVENDO A SAÍDA NO ARQUIVO
 	FILE *fp_saida;
-	   fp_saida = fopen ("processadas/fft-sequence.txt", "w+");
-	   if (fp_saida != NULL) {
-	   	for (i = 1; i < n; i++) {
+
+	fp_saida = fopen ("processadas/fft-sequence.txt", "w+");
+	if (fp_saida != NULL) {
+		for (i = 1; i < n; i++) {
 			//fputs (realPart, fp_saida);
 			//fprintf(fp_saida,"%f %f \n",fftSequence[i][0],fftSequence[i][1]);
 			fprintf(fp_saida,"%i %f \n",(i+1),fftSequence[i][0]);
 			//printf("%f",out[i][0]);
-	   	}
+		}
 		fclose(fp_saida);
-	   }
+	}
 
-	/*printf("\n>> FFT em Ua <<\n");
-	   for (i = 0; i < tamanho; i++) {
-		printf("%f %f \n",fftUa[i][0],fftUa[i][1]);
-	   }
-	printf("\n");
-
-	printf("\n>> FFT em Uc <<\n");
-	   for (i = 0; i < tamanho; i++) {
-		printf("%f %f \n",fftUc[i][0],fftUc[i][1]);
-	   }
-	printf("\n");
-
-	printf("\n>> FFT em Ug <<\n");
-	   for (i = 0; i < tamanho; i++) {
-		printf("%f %f \n",fftUg[i][0],fftUg[i][1]);
-	   }
-	printf("\n");
-
-	printf("\n>> FFT em Ut <<\n");
-	   for (i = 0; i < tamanho; i++) {
-		printf("%f %f \n",fftUt[i][0],fftUt[i][1]);
-	   }
-	printf("\n");*/
-
-         fftw_destroy_plan(p);
-         fftw_free(in);
-	 fftw_free(out);
-	 fftw_free(fftUa);
-	 fftw_free(fftUc);
-	 fftw_free(fftUg);
-	 fftw_free(fftUt);
-
-	/*for (i=0;i<tamanho;i++) {
-		printf("%f # ",UaR[i]);
-	}*/
-
-
-	/*for (i=0;i<tamanho;i++) {
-		printf("%d",Ua[i]);
-	}*/
+	fftw_destroy_plan(p);
+	fftw_free(in);
+	fftw_free(out);
+	fftw_free(fftUa);
+	fftw_free(fftUc);
+	fftw_free(fftUg);
+	fftw_free(fftUt);
 
 }
 
